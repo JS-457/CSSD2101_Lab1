@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="edu.cssd2101.lab01.BaselineTest" time="0.008" tests="2" errors="0" skipped="0" failures="0" flakes="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="edu.cssd2101.lab01.BookTest" time="0.084" tests="10" errors="0" skipped="0" failures="0" flakes="0">
   <properties>
     <property name="java.specification.version" value="27"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,6 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="71.0"/>
   </properties>
-  <testcase name="bothStoresPreserveIdentityAndSnapshots" classname="edu.cssd2101.lab01.BaselineTest" time="0.005"/>
-  <testcase name="invalidBookFailsBeforeItCanBeStored" classname="edu.cssd2101.lab01.BaselineTest" time="0.001"/>
+  <testcase name="rejectsNullsBlanksAndNumericBoundaries" classname="edu.cssd2101.lab01.BookTest" time="0.003"/>
+  <testcase name="normalizesAndExposesImmutableData" classname="edu.cssd2101.lab01.BookTest" time="0.006"/>
+  <testcase name="rejectsInvalidIsbn(String)[1]" classname="edu.cssd2101.lab01.BookTest" time="0.007"/>
+  <testcase name="rejectsInvalidIsbn(String)[2]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="rejectsInvalidIsbn(String)[3]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="rejectsInvalidIsbn(String)[4]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="rejectsInvalidIsbn(String)[5]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="rejectsInvalidIsbn(String)[6]" classname="edu.cssd2101.lab01.BookTest" time="0.0"/>
+  <testcase name="rejectsInvalidIsbn(String)[7]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="identityOrderAndDisplayOrderHaveDifferentPurposes" classname="edu.cssd2101.lab01.BookTest" time="0.003"/>
 </testsuite>

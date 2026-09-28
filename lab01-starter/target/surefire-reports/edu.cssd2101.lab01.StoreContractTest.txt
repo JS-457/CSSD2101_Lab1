@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: edu.cssd2101.lab01.StoreContractTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! -- in edu.cssd2101.lab01.StoreContractTest
+edu.cssd2101.lab01.StoreContractTest.fullArrayRejectsNewEntryButRecognizesDuplicateFirst -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalStateException: catalogue is full
+	at edu.cssd2101.lab01.FixedArrayBookstore.add(FixedArrayBookstore.java:28)
+	at edu.cssd2101.lab01.StoreContractTest.fullArrayRejectsNewEntryButRecognizesDuplicateFirst(StoreContractTest.java:99)
+
+edu.cssd2101.lab01.StoreContractTest.invalidOperationsPreserveState(boolean)[2] -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3234)
+	at edu.cssd2101.lab01.StoreContractTest.invalidOperationsPreserveState(StoreContractTest.java:83)
+
+edu.cssd2101.lab01.StoreContractTest.searchAnalyticsAndRemovalPreserveOrder(boolean)[2] -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[INDIGO Java [0132350882] 101 cents, Other [123456789X] 200 cents]> but was: <[INDIGO Java [0132350882] 101 cents, Advanced java [9780134685991] 200 cents, Other [123456789X] 200 cents]>
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)
+	at edu.cssd2101.lab01.StoreContractTest.searchAnalyticsAndRemovalPreserveOrder(StoreContractTest.java:69)
+

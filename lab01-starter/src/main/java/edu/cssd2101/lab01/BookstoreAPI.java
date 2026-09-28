@@ -91,8 +91,10 @@ public interface BookstoreAPI {
      * @throws IllegalArgumentException if query is blank
      */
     default List<Book> findByAuthor(String query) {
-        // TODO T3: implement the documented extension contract.
-        throw new UnsupportedOperationException("T3 is an exercise");
+        String key = Book.text(query).toLowerCase(java.util.Locale.ROOT);
+        return allBooks().stream()
+                .filter(b -> b.author().toLowerCase(java.util.Locale.ROOT).contains(key))
+                .toList();
     }
 
     /**
@@ -104,8 +106,11 @@ public interface BookstoreAPI {
      * @throws IllegalArgumentException if bounds are invalid
      */
     default List<Book> findByPriceRange(long minimum, long maximum) {
-        // TODO T3: implement the documented extension contract.
-        throw new UnsupportedOperationException("T3 is an exercise");
+        if (minimum < 0 || maximum < minimum)
+            throw new IllegalArgumentException("Minimum must be greater than 0. Maximum must be greater than minimum.");
+        return allBooks().stream()
+                .filter(b -> b.priceCents() >= minimum && b.priceCents() <= maximum)
+                .toList();
     }
 
     /**
@@ -125,8 +130,11 @@ public interface BookstoreAPI {
      * @throws ArithmeticException if the total exceeds long range
      */
     default long inventoryValueCents() {
-        // TODO T3: implement the documented extension contract.
-        throw new UnsupportedOperationException("T3 is an exercise");
+        long sum = 0;
+        for (Book book: allBooks()){ // loops through each book throughout the store
+            sum = Math.addExact(sum, book.priceCents());
+        }
+        return sum;
     }
 
     /**
@@ -135,8 +143,12 @@ public interface BookstoreAPI {
      * @return expensive entry or empty
      */
     default Optional<Book> mostExpensive() {
-        // TODO T3: implement the documented extension contract.
-        throw new UnsupportedOperationException("T3 is an exercise");
+        Book expensive = null;
+        for (Book book: allBooks()){
+            if (expensive == null || book.priceCents() > expensive.priceCents()) // max value search
+                expensive = book;
+        }
+        return Optional.ofNullable(expensive); // if not null, return expensive.
     }
 
     /**
@@ -145,7 +157,11 @@ public interface BookstoreAPI {
      * @return latest entry or empty
      */
     default Optional<Book> mostRecent() {
-        // TODO T3: implement the documented extension contract.
-        throw new UnsupportedOperationException("T3 is an exercise");
+        Book recent = null;
+        for (Book book: allBooks()){
+            if (recent == null || book.year() > recent.year()) // max value search
+                recent = book;
+        }
+        return Optional.ofNullable(recent); // if not null, return expensive.
     }
 }
