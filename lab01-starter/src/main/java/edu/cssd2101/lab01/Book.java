@@ -34,8 +34,8 @@ public final class Book implements Comparable<Book> {
      */
     public Book(String isbn, String title, String author, long priceCents, int year) {
         this.isbn = normalizeIsbn(isbn);
-        if (title == null || author == null) throw new NullPointerException("Text must not be null");
-        else if (title.isEmpty() || author.isEmpty()) throw new IllegalArgumentException("Text must not be empty");
+        if (title == null || author == null) throw new NullPointerException("Text must not be null"); // null text
+        else if (title.isEmpty() || author.isEmpty()) throw new IllegalArgumentException("Text must not be empty"); // empty text
         if (priceCents < 0) throw new IllegalArgumentException("priceCents must be nonnegative");
         if (year < 1450 || year > 2027)
             throw new IllegalArgumentException("year must be 1450..2027");

@@ -33,8 +33,21 @@ public final class FixedArrayBookstore implements BookstoreAPI {
     /** {@inheritDoc} */
     @Override
     public boolean removeByIsbn(String isbn) {
-        // TODO T4: implement the documented extension contract.
-        throw new UnsupportedOperationException("T4 is an exercise");
+        String key = Book.normalizeIsbn(isbn);
+        for (int i = 0; i < size(); i++){
+            if (books[i].isbn().equals(isbn)){
+                System.arraycopy(books, i+1, books, i, size - i - 1);
+                /*
+                System.arraycopy creates a copy of the array from the given position,
+                then sends it to a new or existing destination.
+                The destination array's length is size - i - 1. Example: 5 - 2 - 1 = 2
+                */
+                books[--size] = null; // current item is now null
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /** {@inheritDoc} */
