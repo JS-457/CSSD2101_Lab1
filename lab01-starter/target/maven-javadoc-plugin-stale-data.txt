@@ -1,0 +1,43 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+--no-fonts
+-encoding
+'UTF-8'
+-public
+--release
+26
+-sourcepath
+'D:/Dev/CSSD-2101/lab01-starter/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Dev/CSSD-2101/lab01-starter/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:all
+-doctitle
+'CSSD2101 Lab 01 starter 2026.1 API'
+-use
+-version
+-windowtitle
+'CSSD2101 Lab 01 starter 2026.1 API'
+edu.cssd2101.lab01
+D:\Dev\CSSD-2101\lab01-starter\src\main\java = 1790560434621
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\allclasses-index.html = 1790622445329
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\allpackages-index.html = 1790622445330
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\element-list = 1790622445290
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\help-doc.html = 1790622445347
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\index-all.html = 1790622445342
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\index.html = 1790622445344
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\member-search-index.js = 1790622445332
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\module-search-index.js = 1790622445331
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\overview-tree.html = 1790622445321
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\package-search-index.js = 1790622445331
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\search.html = 1790622445343
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\tag-search-index.js = 1790622445333
+D:\Dev\CSSD-2101\lab01-starter\target\reports\apidocs\type-search-index.js = 1790622445332
