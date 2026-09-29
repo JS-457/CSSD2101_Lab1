@@ -1,10 +1,7 @@
 package edu.cssd2101.lab01;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Pure sparse-array operations except explicitly named in-place sorts.
@@ -13,26 +10,43 @@ import java.util.Optional;
  * compact and preserves encounter order.
  */
 public final class BookArrayUtils {
-    private BookArrayUtils() {}
+    private BookArrayUtils() {
+    }
 
     /**
      * Filters by inclusive maximum with two scans, O(n) time and O(k) result space.
      *
-     * @param books nonnull sparse array
+     * @param books   nonnull sparse array
      * @param maximum nonnegative price limit in cents
      * @return new compact array
-     * @throws NullPointerException if books is null
+     * @throws NullPointerException     if books is null
      * @throws IllegalArgumentException if maximum is negative
      */
     public static Book[] filterPriceAtMost(Book[] books, long maximum) {
-        // TODO T5: implement the documented extension contract.
-        throw new UnsupportedOperationException("T5 is an exercise");
+        Objects.requireNonNull(books, "books"); // detects if books are null
+        int count = 0, space = 0;
+        if (maximum < 0) throw new IllegalArgumentException("Price must be greater than 0");
+
+        // Creation of books array
+        for (int i = 0; i < books.length; i++) {
+            if (books != null && books[i].priceCents() <= maximum)
+                count++;
+        }
+        Book[] filteredPriceBooks = new Book[count];
+
+        // Insertion of books
+        for (int i = 0; i <= books.length; i++) {
+            if (books != null && books[i].priceCents() <= maximum)
+                filteredPriceBooks[space++] = books[i];
+        }
+
+        return filteredPriceBooks;
     }
 
     /**
      * Counts entries before a year, O(n).
      *
-     * @param books nonnull sparse array
+     * @param books  nonnull sparse array
      * @param cutoff exclusive upper year
      * @return matching count
      * @throws NullPointerException if books is null
@@ -46,10 +60,10 @@ public final class BookArrayUtils {
     /**
      * Filters a decade beginning on a multiple of ten, O(n).
      *
-     * @param books nonnull sparse array
+     * @param books  nonnull sparse array
      * @param decade first year, 0..9990 and divisible by ten
      * @return compact snapshot
-     * @throws NullPointerException if books is null
+     * @throws NullPointerException     if books is null
      * @throws IllegalArgumentException if decade is invalid
      */
     public static Book[] filterByDecade(Book[] books, int decade) {
@@ -94,8 +108,22 @@ public final class BookArrayUtils {
      * @throws NullPointerException if books is null
      */
     public static Optional<BigDecimal> averagePrice(Book[] books) {
-        // TODO T5: implement the documented extension contract.
-        throw new UnsupportedOperationException("T5 is an exercise");
+        double totalCents = 0;
+        int count = 0;
+
+        // Gathering the average
+        for (Book b : Objects.requireNonNull(books)) {
+            if (b != null) {
+                totalCents = (double) b.priceCents() / 100.00;
+                count++;
+            }
+        }
+        totalCents /= count;
+
+        // returns a BigDecimal value for the
+        return count == 0
+                ? Optional.empty()
+                : Optional.of((BigDecimal.valueOf(totalCents)));
     }
 
     /**
@@ -115,11 +143,11 @@ public final class BookArrayUtils {
     /**
      * Concatenates arrays, preserving null slots and duplicates, O(n+m).
      *
-     * @param first nonnull first array
+     * @param first  nonnull first array
      * @param second nonnull second array
      * @return independent array in first-then-second order
      * @throws NullPointerException if either array is null
-     * @throws ArithmeticException if combined length exceeds int range
+     * @throws ArithmeticException  if combined length exceeds int range
      */
     public static Book[] merge(Book[] first, Book[] second) {
         Objects.requireNonNull(first);
@@ -137,7 +165,11 @@ public final class BookArrayUtils {
      * @throws NullPointerException if books is null
      */
     public static Book[] removeDuplicates(Book[] books) {
-        // TODO T5: implement the documented extension contract.
-        throw new UnsupportedOperationException("T5 is an exercise");
+        var first = new LinkedHashMap<String, Book>(); // Hash map for maintaining the first instance of an ISBN.
+        for (Book b : Objects.requireNonNull(books)) {
+            if (b != null)
+                first.putIfAbsent(b.isbn(), b); // sets the hash map to the first instance of an ISBN
+        }
+        return first.values().toArray(Book[]::new); // sends a revised version of the books array
     }
 }

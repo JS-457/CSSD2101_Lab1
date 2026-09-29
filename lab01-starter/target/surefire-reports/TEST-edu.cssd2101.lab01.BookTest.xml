@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-27\bin"/>
-    <property name="sun.java.command" value="C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126\surefirebooter-20260928184702377_3.jar C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126 2026-09-28T18-47-02_270-jvmRun1 surefire-20260928184702377_1tmp surefire_0-20260928184702377_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790\surefirebooter-20260928201114682_3.jar C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790 2026-09-28T20-11-14_575-jvmRun1 surefire-20260928201114682_1tmp surefire_0-20260928201114682_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Dev\CSSD-2101\lab01-starter\target\test-classes;D:\Dev\CSSD-2101\lab01-starter\target\classes;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\sayed\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sayed\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\sayed\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sayed\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126\surefirebooter-20260928184702377_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790\surefirebooter-20260928201114682_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="27+35-2325"/>
@@ -59,13 +59,13 @@
     <property name="java.class.version" value="71.0"/>
   </properties>
   <testcase name="rejectsNullsBlanksAndNumericBoundaries" classname="edu.cssd2101.lab01.BookTest" time="0.003"/>
-  <testcase name="normalizesAndExposesImmutableData" classname="edu.cssd2101.lab01.BookTest" time="0.006"/>
-  <testcase name="rejectsInvalidIsbn(String)[1]" classname="edu.cssd2101.lab01.BookTest" time="0.007"/>
-  <testcase name="rejectsInvalidIsbn(String)[2]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="normalizesAndExposesImmutableData" classname="edu.cssd2101.lab01.BookTest" time="0.007"/>
+  <testcase name="rejectsInvalidIsbn(String)[1]" classname="edu.cssd2101.lab01.BookTest" time="0.008"/>
+  <testcase name="rejectsInvalidIsbn(String)[2]" classname="edu.cssd2101.lab01.BookTest" time="0.002"/>
   <testcase name="rejectsInvalidIsbn(String)[3]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
-  <testcase name="rejectsInvalidIsbn(String)[4]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
+  <testcase name="rejectsInvalidIsbn(String)[4]" classname="edu.cssd2101.lab01.BookTest" time="0.0"/>
   <testcase name="rejectsInvalidIsbn(String)[5]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
-  <testcase name="rejectsInvalidIsbn(String)[6]" classname="edu.cssd2101.lab01.BookTest" time="0.0"/>
+  <testcase name="rejectsInvalidIsbn(String)[6]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
   <testcase name="rejectsInvalidIsbn(String)[7]" classname="edu.cssd2101.lab01.BookTest" time="0.001"/>
   <testcase name="identityOrderAndDisplayOrderHaveDifferentPurposes" classname="edu.cssd2101.lab01.BookTest" time="0.003"/>
 </testsuite>
