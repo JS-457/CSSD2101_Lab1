@@ -22,15 +22,6 @@ public final class BookArrayUtils {
      * @throws NullPointerException     if books is null
      * @throws IllegalArgumentException if maximum is negative
      */
-    /**
-     * Filters by inclusive maximum with two scans, O(n) time and O(k) result space.
-     *
-     * @param books   nonnull sparse array
-     * @param maximum nonnegative price limit in cents
-     * @return new compact array
-     * @throws NullPointerException     if books is null
-     * @throws IllegalArgumentException if maximum is negative
-     */
     public static Book[] filterPriceAtMost(Book[] books, long maximum) {
         Objects.requireNonNull(books, "books"); // detects if books are null
         int count = 0, space = 0;
@@ -123,16 +114,18 @@ public final class BookArrayUtils {
         // Gathering the average
         for (Book b : Objects.requireNonNull(books)) {
             if (b != null) {
-                totalCents = (double) b.priceCents() / 100.00;
+                totalCents += (double) b.priceCents();
                 count++;
             }
         }
-        totalCents /= count;
 
         // returns a BigDecimal value for the
         return count == 0
-                ? Optional.empty()
-                : Optional.of((BigDecimal.valueOf(totalCents)));
+         ? Optional.empty()
+         : Optional.of(
+                 (BigDecimal.valueOf(totalCents)
+                 .movePointLeft(2)
+                 .divide(BigDecimal.valueOf(count), 2, java.math.RoundingMode.HALF_EVEN)));
     }
 
     /**
