@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="edu.cssd2101.lab01.ArrayUtilsTest" time="0.09" tests="5" errors="3" skipped="0" failures="1" flakes="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="edu.cssd2101.lab01.ArrayUtilsTest" time="0.096" tests="5" errors="3" skipped="0" failures="1" flakes="0">
   <properties>
     <property name="java.specification.version" value="27"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-27\bin"/>
-    <property name="sun.java.command" value="C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126\surefirebooter-20260928184702377_3.jar C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126 2026-09-28T18-47-02_270-jvmRun1 surefire-20260928184702377_1tmp surefire_0-20260928184702377_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790\surefirebooter-20260928201114682_3.jar C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790 2026-09-28T20-11-14_575-jvmRun1 surefire-20260928201114682_1tmp surefire_0-20260928201114682_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Dev\CSSD-2101\lab01-starter\target\test-classes;D:\Dev\CSSD-2101\lab01-starter\target\classes;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter\6.1.3\junit-jupiter-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.1.3\junit-jupiter-api-6.1.3.jar;C:\Users\sayed\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sayed\.m2\repository\org\junit\platform\junit-platform-commons\6.1.3\junit-platform-commons-6.1.3.jar;C:\Users\sayed\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sayed\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.1.3\junit-jupiter-params-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.1.3\junit-jupiter-engine-6.1.3.jar;C:\Users\sayed\.m2\repository\org\junit\platform\junit-platform-engine\6.1.3\junit-platform-engine-6.1.3.jar"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\sayed\AppData\Local\Temp\surefire1670595565358858126\surefirebooter-20260928184702377_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\sayed\AppData\Local\Temp\surefire60688821254427790\surefirebooter-20260928201114682_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="27+35-2325"/>
@@ -58,14 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="71.0"/>
   </properties>
-  <testcase name="sortIsStableNullLastAndMutatesOnlyGivenArray" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.039"/>
-  <testcase name="invalidUtilityArgumentsAreExplicit" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.01">
+  <testcase name="sortIsStableNullLastAndMutatesOnlyGivenArray" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.04"/>
+  <testcase name="invalidUtilityArgumentsAreExplicit" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.011">
     <failure message="Unexpected exception type thrown, expected: &lt;java.lang.NullPointerException&gt; but was: &lt;java.lang.UnsupportedOperationException&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.NullPointerException> but was: <java.lang.UnsupportedOperationException>
 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3234)
-	at edu.cssd2101.lab01.ArrayUtilsTest.invalidUtilityArgumentsAreExplicit(ArrayUtilsTest.java:72)
+	at edu.cssd2101.lab01.ArrayUtilsTest.invalidUtilityArgumentsAreExplicit(ArrayUtilsTest.java:81)
 Caused by: java.lang.UnsupportedOperationException: T5 is an exercise
-	at edu.cssd2101.lab01.BookArrayUtils.filterPriceAtMost(BookArrayUtils.java:29)
-	at edu.cssd2101.lab01.ArrayUtilsTest.lambda$invalidUtilityArgumentsAreExplicit$0(ArrayUtilsTest.java:72)
+	at edu.cssd2101.lab01.BookArrayUtils.removeDuplicates(BookArrayUtils.java:152)
+	at edu.cssd2101.lab01.ArrayUtilsTest.lambda$invalidUtilityArgumentsAreExplicit$4(ArrayUtilsTest.java:81)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:54)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
 	... 2 more
@@ -73,19 +73,19 @@ Caused by: java.lang.UnsupportedOperationException: T5 is an exercise
   </testcase>
   <testcase name="mergePreservesSlotsWhileDedupKeepsFirstInstance" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.002">
     <error message="T5 is an exercise" type="java.lang.UnsupportedOperationException"><![CDATA[java.lang.UnsupportedOperationException: T5 is an exercise
-	at edu.cssd2101.lab01.BookArrayUtils.removeDuplicates(BookArrayUtils.java:141)
+	at edu.cssd2101.lab01.BookArrayUtils.removeDuplicates(BookArrayUtils.java:152)
 	at edu.cssd2101.lab01.ArrayUtilsTest.mergePreservesSlotsWhileDedupKeepsFirstInstance(ArrayUtilsTest.java:63)
 ]]></error>
   </testcase>
   <testcase name="sparseFiltersAreCompactAndDoNotMutateInput" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.002">
-    <error message="T5 is an exercise" type="java.lang.UnsupportedOperationException"><![CDATA[java.lang.UnsupportedOperationException: T5 is an exercise
-	at edu.cssd2101.lab01.BookArrayUtils.filterPriceAtMost(BookArrayUtils.java:29)
+    <error message="Books must not be empty" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Books must not be empty
+	at edu.cssd2101.lab01.BookArrayUtils.filterPriceAtMost(BookArrayUtils.java:33)
 	at edu.cssd2101.lab01.ArrayUtilsTest.sparseFiltersAreCompactAndDoNotMutateInput(ArrayUtilsTest.java:18)
 ]]></error>
   </testcase>
   <testcase name="averageRoundsHalfEvenAndDistinguishesNoDataFromFree" classname="edu.cssd2101.lab01.ArrayUtilsTest" time="0.016">
     <error message="T5 is an exercise" type="java.lang.UnsupportedOperationException"><![CDATA[java.lang.UnsupportedOperationException: T5 is an exercise
-	at edu.cssd2101.lab01.BookArrayUtils.averagePrice(BookArrayUtils.java:98)
+	at edu.cssd2101.lab01.BookArrayUtils.averagePrice(BookArrayUtils.java:109)
 	at edu.cssd2101.lab01.ArrayUtilsTest.averageRoundsHalfEvenAndDistinguishesNoDataFromFree(ArrayUtilsTest.java:40)
 ]]></error>
   </testcase>

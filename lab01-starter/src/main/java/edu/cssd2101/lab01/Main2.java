@@ -21,7 +21,7 @@ public class Main2 {
             //Book b3 = new Book("1234567890123", "Programming with C++", null, 1250, 2023); // Null title
             // Book b4 = new Book("7894539332", "Programming with C", "Sayed Shah", 1250, 20024); // incorrect dates
             Book b4 = new Book("7894539332", "Programming with C", "Sayed Shah", 1250, 2024);
-            Book b5 = new Book("789-453-933-1", "Programming with C", "Sayed Shah", 1250, 2024);
+            Book b5 = new Book("789-453-933-1", "Programming with C", "Sayed Shah", 2450, 2024);
 
             System.out.println(b5.toString());
             System.out.println(b4.equals(b5));
@@ -54,5 +54,8 @@ public class Main2 {
         System.out.println(store.findByTitle("Effective Java"));
         System.out.println(store.inventoryValueCents());
         System.out.println(store.mostRecent());
+
+        Book[] bookArray = {b4, b5};
+        System.out.println(BookArrayUtils.averagePrice(bookArray));
     }
 }
