@@ -22,21 +22,30 @@ public final class BookArrayUtils {
      * @throws NullPointerException     if books is null
      * @throws IllegalArgumentException if maximum is negative
      */
+    /**
+     * Filters by inclusive maximum with two scans, O(n) time and O(k) result space.
+     *
+     * @param books   nonnull sparse array
+     * @param maximum nonnegative price limit in cents
+     * @return new compact array
+     * @throws NullPointerException     if books is null
+     * @throws IllegalArgumentException if maximum is negative
+     */
     public static Book[] filterPriceAtMost(Book[] books, long maximum) {
         Objects.requireNonNull(books, "books"); // detects if books are null
         int count = 0, space = 0;
-        if (maximum < 0) throw new IllegalArgumentException("Price must be greater than 0");
+        if (maximum <= 0) throw new IllegalArgumentException("Price must be greater than 0");
 
         // Creation of books array
         for (int i = 0; i < books.length; i++) {
-            if (books != null && books[i].priceCents() <= maximum)
+            if (books[i] != null && books[i].priceCents() <= maximum)
                 count++;
         }
         Book[] filteredPriceBooks = new Book[count];
 
         // Insertion of books
-        for (int i = 0; i <= books.length; i++) {
-            if (books != null && books[i].priceCents() <= maximum)
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] != null && books[i].priceCents() <= maximum)
                 filteredPriceBooks[space++] = books[i];
         }
 
