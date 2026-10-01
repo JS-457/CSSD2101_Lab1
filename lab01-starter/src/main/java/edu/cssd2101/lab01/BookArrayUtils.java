@@ -25,7 +25,7 @@ public final class BookArrayUtils {
     public static Book[] filterPriceAtMost(Book[] books, long maximum) {
         Objects.requireNonNull(books, "books"); // detects if books are null
         int count = 0, space = 0;
-        if (maximum <= 0) throw new IllegalArgumentException("Price must be greater than 0");
+        if (maximum < 0) throw new IllegalArgumentException("Price must be greater than 0");
 
         // Creation of books array
         for (int i = 0; i < books.length; i++) {
