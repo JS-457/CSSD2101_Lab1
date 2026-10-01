@@ -33,7 +33,7 @@ public final class FixedArrayBookstore implements BookstoreAPI {
     /** {@inheritDoc} */
     @Override
     public boolean removeByIsbn(String isbn) {
-        String key = Book.normalizeIsbn(isbn);
+        String key = Book.normalizeIsbn(key);
         for (int i = 0; i < size(); i++){
             if (books[i].isbn().equals(isbn)){
                 System.arraycopy(books, i+1, books, i, size - i - 1);
