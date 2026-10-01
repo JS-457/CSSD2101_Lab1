@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSSD2101 Lab 01 starter</a> &gt; <a href="index.source.html" class="el_package">edu.cssd2101.lab01</a> &gt; <span class="el_source">Main2.java</span></div><h1>Main2.java</h1><pre class="source lang-java linenums">package edu.cssd2101.lab01;
+
+import java.util.List;
+
+/**
+ * Debug class for testing different classes of Book, BookArrayUtils, etc.
+ */
+public class Main2 {
+    private Main2() {
+    }
+
+    /**
+     * Debug method for testing different classes
+     *
+     * @param args ignored command-line arguments
+     */
+    public static void main(String[] args) {
+        try {
+            //Book b1 = new Book(&quot;123456789012332&quot;, &quot;Programming with Java&quot;, &quot;Sayed Shah&quot;, 1250, 2023); // incorrect ISBN
+            //Book b2 = new Book(&quot;7894539331&quot;, &quot;&quot;, &quot;Sayed Shah&quot;, 1250, 2024); // Empty title
+            //Book b3 = new Book(&quot;1234567890123&quot;, &quot;Programming with C++&quot;, null, 1250, 2023); // Null title
+            // Book b4 = new Book(&quot;7894539332&quot;, &quot;Programming with C&quot;, &quot;Sayed Shah&quot;, 1250, 20024); // incorrect dates
+<span class="nc" id="L23">            Book b4 = new Book(&quot;7894539332&quot;, &quot;Programming with C&quot;, &quot;Sayed Shah&quot;, 1250, 2024);</span>
+<span class="nc" id="L24">            Book b5 = new Book(&quot;789-453-933-1&quot;, &quot;Programming with C&quot;, &quot;Sayed Shah&quot;, 2450, 2024);</span>
+
+<span class="nc" id="L26">            System.out.println(b5.toString());</span>
+<span class="nc" id="L27">            System.out.println(b4.equals(b5));</span>
+
+
+<span class="nc" id="L30">            demonstrate(&quot;ArrayList&quot;, new ArrayListBookstore(), b4, b5);</span>
+<span class="nc" id="L31">            demonstrate(&quot;FixedArray&quot;, new FixedArrayBookstore(5), b4, b5);</span>
+
+<span class="nc" id="L33">            System.out.println(&quot;All conditions met. Program has passed.&quot;);</span>
+<span class="nc" id="L34">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L35">            System.out.println(&quot;Error detected: &quot; + e.getMessage());</span>
+<span class="nc" id="L36">        } catch (NullPointerException n) {</span>
+<span class="nc" id="L37">            System.out.println(&quot;Error detected: &quot; + n.getMessage());</span>
+<span class="nc" id="L38">        }</span>
+
+
+<span class="nc" id="L41">    }</span>
+
+    private static void demonstrate(String label, BookstoreAPI store, Book b4, Book b5) {
+<span class="nc" id="L44">        store.add(new Book(&quot;9780134685991&quot;, &quot;Effective Java&quot;, &quot;Joshua Bloch&quot;, 4599, 2018));</span>
+<span class="nc" id="L45">        store.add(new Book(&quot;0132350882&quot;, &quot;Clean Code&quot;, &quot;Robert Martin&quot;, 3299, 2008));</span>
+<span class="nc" id="L46">        store.add(b4);</span>
+<span class="nc" id="L47">        store.add(b5);</span>
+
+<span class="nc" id="L49">        System.out.println(label + &quot; size=&quot; + store.size());</span>
+<span class="nc" id="L50">        System.out.println(&quot;found=&quot; + store.findByIsbn(&quot;978-0134685991&quot;).orElseThrow().title());</span>
+<span class="nc" id="L51">        System.out.println(&quot;snapshot=&quot; + store.allBooks());</span>
+<span class="nc" id="L52">        System.out.println(&quot;Books equal: &quot; + store.findByIsbn(&quot;9780134685991&quot;).equals(store.findByIsbn(&quot;0132350882&quot;)) + &quot;\n&quot;);</span>
+
+<span class="nc" id="L54">        System.out.println(store.findByTitle(&quot;Effective Java&quot;));</span>
+<span class="nc" id="L55">        System.out.println(store.inventoryValueCents());</span>
+<span class="nc" id="L56">        System.out.println(store.mostRecent());</span>
+
+<span class="nc" id="L58">        Book[] bookArray = {b4, b5};</span>
+<span class="nc" id="L59">        System.out.println(BookArrayUtils.filterPriceAtMost(bookArray, 4500));</span>
+<span class="nc" id="L60">        System.out.println(BookArrayUtils.averagePrice(bookArray));</span>
+<span class="nc" id="L61">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

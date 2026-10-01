@@ -6,7 +6,8 @@ implemented a try and catch statement VERY recently for Main function and create
 solving and understanding these functions:
 - inventoryValueCents
 - removeByIsbn
-- 
+- filterPriceAtMost, for the seperation
+- averagePrice, regarding the BigDecimal conversion
 - 
 
 2. Design and Code (8 minutes)
@@ -16,12 +17,12 @@ Based on what was mentioned in task (1):
 - Invalid adjacent years was done with an out-of-range year value.
 - Blank text was caught via the existing exceptions for the text function, Empty and Null had their own 
 - For price, something to catch would be if its value is less than 0.
-- 
-
 With an admittedly last minute try-catch sequence, the error was caught and resumed the program.
-For the null text catch, I made a new catch sequence for NullPointerException
+For the null text catch, I made a new catch sequence for NullPointerException.
 
-Task 2 required me to 
+What we recognized is that 
+
+Task 2 required us to 
 - 
 -
 -

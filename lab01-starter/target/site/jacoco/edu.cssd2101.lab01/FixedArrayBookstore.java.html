@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FixedArrayBookstore.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSSD2101 Lab 01 starter</a> &gt; <a href="index.source.html" class="el_package">edu.cssd2101.lab01</a> &gt; <span class="el_source">FixedArrayBookstore.java</span></div><h1>FixedArrayBookstore.java</h1><pre class="source lang-java linenums">package edu.cssd2101.lab01;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
+/** Fixed-capacity array store: live entries occupy exactly indices zero through size-1. */
+public final class FixedArrayBookstore implements BookstoreAPI {
+    private final Book[] books;
+    private int size;
+
+    /**
+     * Creates an empty bounded catalogue.
+     *
+     * @param capacity maximum entries, including zero
+     * @throws IllegalArgumentException if capacity is negative
+     */
+<span class="fc" id="L18">    public FixedArrayBookstore(int capacity) {</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if (capacity &lt; 0) throw new IllegalArgumentException(&quot;capacity must be nonnegative&quot;);</span>
+<span class="fc" id="L20">        books = new Book[capacity];</span>
+<span class="fc" id="L21">    }</span>
+
+    /** {@inheritDoc} */
+    @Override
+    public boolean add(Book book) {
+<span class="fc" id="L26">        Objects.requireNonNull(book, &quot;book&quot;);</span>
+<span class="pc bpc" id="L27" title="1 of 4 branches missed.">        for (int i = 0; i &lt; size; i++) if (books[i].equals(book)) return false;</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (size == books.length) throw new IllegalStateException(&quot;catalogue is full&quot;);</span>
+<span class="fc" id="L29">        books[size++] = book;</span>
+<span class="fc" id="L30">        return true;</span>
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public boolean removeByIsbn(String isbn) {
+<span class="nc" id="L36">        String key = Book.normalizeIsbn(isbn);</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (int i = 0; i &lt; size(); i++){</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">            if (books[i].isbn().equals(isbn)){</span>
+<span class="nc" id="L39">                System.arraycopy(books, i+1, books, i, size - i - 1);</span>
+                /*
+                System.arraycopy creates a copy of the array from the given position,
+                then sends it to a new or existing destination.
+                The destination array's length is size - i - 1. Example: 5 - 2 - 1 = 2
+                */
+<span class="nc" id="L45">                books[--size] = null; // current item is now null</span>
+<span class="nc" id="L46">                return true;</span>
+            }
+        }
+
+<span class="nc" id="L50">        return false;</span>
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public List&lt;Book&gt; allBooks() {
+<span class="fc" id="L56">        return List.copyOf(Arrays.asList(Arrays.copyOf(books, size)));</span>
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public int size() {
+<span class="fc" id="L62">        return size;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>
